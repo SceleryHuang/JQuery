@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                //DOM
+                this.value = "hahhahha";
+               //jquery方式
+                $(this).val("哈哈哈");
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="显示效果">
+</body>
+</html>

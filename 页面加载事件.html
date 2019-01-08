@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.1.js"></script>
+</head>
+<body>
+<script>
+    window.onload= function () {
+        console.log("通过DOM方法加载11")
+    };
+    window.onload= function () {
+        console.log("通过DOM方法加载22")
+    };
+
+    //jQuery方式加载1,是DOM方法的改写，比较慢
+    $(window).load(function () {
+        console.log("通过JQuery方法加载111---------------1")
+    });
+    $(window).load(function () {
+        console.log("通过JQuery方法加载222---------------1")
+    });
+
+    //jQuery方式加载2
+    $(document).ready(function () {
+        console.log("通过JQuery方法document ready加载1111---------------2")
+    });
+    $(document).ready(function () {
+        console.log("通过JQuery方法document ready加载2222---------------2")
+    });
+
+    //jQuery方式加载3
+    jQuery(function () {
+        console.log("通过JQuery加载1111---------------3")
+    });
+    jQuery(function () {
+        console.log("通过JQuery加载2222---------------3")
+    });
+
+
+    //jQuery方式加载4
+    $(function () {
+        console.log("通过$加载1111---------------4")
+    });
+    $(function () {
+        console.log("通过$加载2222---------------4")
+    });
+
+</script>
+
+</body>
+</html>
