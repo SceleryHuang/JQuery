@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wap{
+            background: hotpink;
+            height: 200px;
+            width: 200px;
+        }
+        .wap2{
+            background: red;
+            height: 200px;
+            width: 200px;
+            display: none;
+        }
+    </style>
+    <script src = "jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#div1").mouseenter(function () {
+                $("#div2").stop().show(500);
+
+            });
+            $("#div1").mouseleave(function () {
+                $("#div2").stop().hide(500);
+            })
+        })
+    </script>
+</head>
+<body>
+<div id = "div1" class="wap"></div>
+<div id = "div2" class="wap2"></div>
+</body>
+</html>

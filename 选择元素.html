@@ -4,18 +4,70 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="jquery-1.12.1.js"></script>
+    <style>
+        .cls{
+            height: 200px;
+            width: 200px;
+            background: hotpink;
+        }
+    </style>
     <script>
         $(function () {
+            //id选择器
             $("#btn").click(function () {
-                //DOM
+                //DOM方式
                 this.value = "hahhahha";
                //jquery方式
                 $(this).val("哈哈哈");
+                //标签选择器
+                $("p").text("你好");
+                //类样式选择器
+                $(".cls").css("background","red");
+                //交集选择器，标签+类选择器
+                //$("p.cls").css("border","5px solid yellow");
+                $("p.cls").css("height","500px");
+                //并集选择器，选择器，选择器，。。。
+                $(".cls,p,span").css("border","5px solid green")
+                //添加元素
+                $("#div1").html("<p>新添加的p</p>")
+                //层次选择器
+
+                //获取div 这个父级节点下的所有span标签（直接子元素，孙子元素）
+                $("div span").css("background","#CCC");
+                //获取div 这个父级节点下的子span标签（直接子元素）
+                $("div>span").css("background","orange");
+                //获取div 这个父级节点后面的兄弟span标签
+                $("div~span").css("background","black");
+                //获取div 这个父级节点后面直接的兄弟span标签，直接兄弟标签若不是span，则无效
+                $("div+span").css("background","black");
             })
         })
     </script>
 </head>
 <body>
 <input type="button" id="btn" value="显示效果">
+<div id = "div1"></div>
+<div>
+    <p class="cls" ></p>
+    <p>1111111111</p>
+    <p>222222222</p>
+    <p>33333333333333</p>
+    <p>55555555</p>
+
+    <span class="cls">这是div里面的span</span>
+    <ul>
+        <li>这是li</li>
+        <li>这是li
+            <span>li里面的span</span>
+            <span>li里面的span</span>
+        </li>
+    <li>这是li</li>
+    <li>这是li</li>
+    </ul>
+
+</div>
+
+<span >这是div后的span</span>
+<span >这是div后的span</span>
 </body>
 </html>

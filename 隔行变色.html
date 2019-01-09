@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul{
+            position: relative;
+
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $("#ul>li:odd").css("background","red");
+                $("#ul>li:even").css("background","green");
+            })
+        })
+    </script>
+</head>
+<body>
+<input id = "btn" type="button" value="隔行变色">
+<ul id = "ul">
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+</ul>
+</body>
+</html>
