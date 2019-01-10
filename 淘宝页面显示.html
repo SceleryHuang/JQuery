@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #left{
+            position: relative;
+            left: 80%;
+            top:10%;
+            list-style: none;
+            background-color: hotpink;
+        }
+        #center{
+            position: relative;
+            left: 40%;
+            top:10%;
+            list-style: none;
+            background-color:royalblue;
+        }
+        #right{
+            position: relative;
+            list-style: none;
+            background-color:antiquewhite;
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#right>li").mouseenter(function(){
+                var index = $(this).index();
+                FindIndex(index);
+            });
+
+            $("#left>li").mouseenter(function () {
+                var index = $(this).index()+5;
+                FindIndex(index);
+            });
+        });
+        function FindIndex (index) {
+            // var index = $(this).index();
+            console.log(index);
+            $("#center>li").hide();
+            $("#center>li:eq("+index+")").show();
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+<ul id = "right">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<ul id = "center">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+</ul>
+
+<ul id = "left">
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+</ul>
+
+</html>

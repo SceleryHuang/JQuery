@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul{
+            position: relative;
+            list-style: none;
+
+
+        }
+    </style>
+    <script src="jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#ul>li").click(function () {
+                $(this).css("color","orange").css("fontSize","30px").css("fontFamily","全新硬笔行书简");
+            }).mouseenter(function () {
+                $(this).css("backgroundColor","red");
+            }).mouseleave(function () {
+                $(this).css("backgroundColor","");
+            });
+
+            $("#btn").click(function () {
+                var reg =/^[\u4e00-\u9fa5]{2,6}$/;
+                var flag = reg.test($("#text").val());
+                if (flag){
+                    $("#text").css("background","green");
+                }
+                else{
+                    $("#text").css("background","red");
+                }
+            })
+
+
+
+        })
+    </script>
+</head>
+<body>
+<input  type="button" value="隔行变色">
+<ul id = "ul">
+    <li>哈哈反抗卡</li>
+    <li>或更换合格合格供货女女女</li>
+    <li>11111111111记得记得点击基督教1111</li>
+    <li>解放军到几点就觉得</li>
+    <li>j看的考虑对方v</li>
+    <li>解放军风骚律师</li>
+    <li>飞机交付甲方的快乐</li>
+</ul>
+
+请输入您的名字：<input type="text" id = "text"><br>
+<input type="button" value="提交" id = "btn">
+
+</body>
+</html>
