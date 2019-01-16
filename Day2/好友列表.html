@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul li{
+            list-style: none;
+        }
+        #list{
+            width:100px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+        }
+        /*#list ul{*/
+            /*display: none;*/
+        /*}*/
+        #list ul li{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            line-height: 40px;
+            text-indent: 10px;
+            cursor: pointer;
+        }
+        #list ul li.hover{
+            background: blueviolet;
+            color: #eee;
+        }
+        #list li span{
+            display: inline-block;
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        #list li span.active{
+            background: burlywood;
+            color: #eee;
+        }
+
+    </style>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        // $(function () {
+        //     $("#list>li>ul").css("display","none");
+        //     $("#list>li").mouseenter(function () {
+        //        // alert(this);
+        //         $(this).siblings("li").children("ul").css("display","none");
+        //         $(this).children("ul").css("display","block");
+        //     })
+        // })
+        $(function () {
+            $("#list>li>ul").hide(500);
+            $("#list>li").mouseenter(function () {
+                // alert(this);
+                $(this).siblings("li").children("ul").hide(500);
+                $(this).children("ul").show(500);
+            })
+        })
+    </script>
+</head>
+<body>
+<!--<div id = "div1" style="height: 500px;width: 200px;border: royalblue solid 3px">-->
+<!--<ul id = "uu" style="list-style: none ;margin: 0;padding: 0;text-align: center">-->
+    <!--<li>-->
+        <!--小学同学-->
+        <!--<ul>-->
+
+        <!--</ul>-->
+    <!--</li>-->
+    <!--<li>-->
+        <!--初中同学-->
+        <!--<ul>-->
+
+        <!--</ul>-->
+    <!--</li>-->
+    <!--<li>-->
+        <!--高中同学-->
+        <!--<ul>-->
+
+        <!--</ul>-->
+    <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<ul id="list">
+    <li>
+        <span>我的好友</span>
+        <ul>
+            <li>鼻涕虫</li>
+            <li>张瘸子</li>
+            <li>王二虎</li>
+            <li>李翠花</li>
+        </ul>
+    </li>
+    <li>
+        <span>我的</span>
+        <ul>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+            <li>黄优秀</li>
+        </ul>
+    </li>
+    <li>
+        <span>我的友</span>
+        <ul>
+            <li>张优秀</li>
+            <li>王优秀</li>
+            <li>程优秀</li>
+            <li>李优秀</li>
+        </ul>
+    </li>
+</ul>
+
+</body>
+</html>
