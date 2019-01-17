@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #uu{
+            list-style: none;
+            position: relative;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            //鼠标移入，鼠标移出，点击
+            $("#uu>li").mouseenter(function () {
+                $(this).css("backgroundColor","red").siblings().css("backgroundColor","");
+            }).mouseleave(function () {
+                $(this).parent().children().css("backgroundColor","");
+            }).click(function () {
+                //断链--对象调用方法后，返回的不是原来的对象了，出现断链，
+                //用end()方法，或者不使用链式编程
+                $(this).prevAll().css("backgroundColor","yellow").end().nextAll().css("backgroundColor","blue");
+
+            })
+        })
+    </script>
+</head>
+<body>
+<ul id = "uu">
+    <li>哈哈</li>
+    <li>嘻嘻</li>
+    <li>洛洛</li>
+    <li>咕咕</li>
+    <li>呲呲</li>
+    <li>嘀嘀</li>
+    <li>呖呖</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 300px;
+            width: 500px;
+            background-color: yellowgreen;
+        }
+    </style>
+    <script src="../jquery-1.12.1.js"></script>
+
+
+    <!--动画效果：-->
+    <!--show()和hide()方法-->
+    <!--有两个参数 show(参数1，参数2)-->
+
+    <!--参数1：数字或fast normal slow-->
+    <!--参数2：回调函数，在动画结束后调用-->
+
+    <!--fadeIn()和fadeOut()淡入淡出-->
+    <!--方法上同-->
+
+
+    <script>
+        $(function () {
+            //show()和hide()
+            // $("#btn1").click(function () {
+            //     $("div").show(500);
+            // });
+            // $("#btn2").click(function () {
+            //     $("div").hide(500);
+            // });
+
+            //slideUp()和slideDown()
+            // $("#btn1").click(function () {
+            //     $("div").slideDown(500);
+            // });
+            // $("#btn2").click(function () {
+            //     $("div").slideUp(500);
+            // });
+            // $("#btn3").click(function () {
+            //     $("div").slideToggle(500);
+            // });
+
+            //fadeOut()和fadeIn()
+            $("#btn1").click(function () {
+                $("div").fadeIn(500);
+            });
+            $("#btn2").click(function () {
+                $("div").fadeOut(500);
+            });
+            $("#btn3").click(function () {
+                $("div").fadeToggle(500);
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="显示" id="btn1">
+<input type="button" value="隐藏" id="btn2">
+<input type="button" value="切换" id="btn3">
+<div></div>
+</body>
+</html>

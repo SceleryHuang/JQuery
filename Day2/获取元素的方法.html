@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                //获取前一个兄弟元素
+                // $("#four").prev().css("backgroundColor","red");
+                // //获取前面所有的兄弟元素
+                // $("#four").prevAll().css("backgroundColor","yellow");
+                // //获取后一个兄弟元素
+                // $("#four").next().css("backgroundColor","orange");
+                // //获取后面所有的兄弟元素
+                // $("#four").nextAll().css("backgroundColor","blue");
+                // //获取后面所有的兄弟元素
+                $("#four").parent().css("backgroundColor","black");
+
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id = "btn">
+<div>
+    <li>哈哈</li>
+    <li>嘻嘻</li>
+    <li>洛洛</li>
+    <li id = "four">咕咕</li>
+    <li>呲呲</li>
+    <li>嘀嘀</li>
+    <li>呖呖</li>
+</div>
+</body>
+</html>
