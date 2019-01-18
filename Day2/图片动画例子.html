@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.1.js"></script>
+    <style>
+        img{
+            width:200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("#div1>img:last").hide(1000,function f1 () {
+                    $(this).prev().hide(1000,f1)
+                })
+            });
+            $("#btn2").click(function () {
+                $("#div1>img:first").show(1000,function f1 () {
+                    $(this).next().show(1000,f1)
+                })
+            });
+            clickmiss("#div2>img");
+            clickmiss("#div3>img");
+
+        });
+        function clickmiss(id) {
+            $(id).click(function () {
+                $(this).parent().hide(1000)
+            });
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="隐藏效果" id = "btn1">
+<input type="button" value="显示效果" id = "btn2">
+<div id = "div1">
+    <img src="../0.jpg"/>
+    <img src="../1.jpg"/>
+</div>
+<div id = "div2"><img src="../0.jpg"/></div>
+<div id = "div3"><img src="../1.jpg"/></div>
+
+
+</body>
+</html>
