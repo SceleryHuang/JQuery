@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery-1.12.1.js"></script>
+    <style>
+        #div1{
+            height: 300px;
+            width: 200px;
+            border: 2px solid hotpink;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                //用添加元素的方法
+                // $("<input type='button' value='按钮'>").appendTo($("#div1")).mouseenter(function () {
+                //     $(this).css("background","yellow");
+                // })
+            //    用innerhtml的方法
+               // $("#div1").html("<input type='button' value='按钮'>");
+
+                //$("#div1").prepend($("<span> this is a span</span>"));
+
+               // $("<span> this is another span</span>").prependTo($("#div1"));
+
+                //在后面成为兄弟元素
+                $("#div1").after($("<span> this is a span</span>"));
+                //成为前一个兄弟元素
+                $("#div1").before($("<span> this is a span</span>"));
+
+
+
+            })
+
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="创建元素" id = "btn1">
+<div id = "div1"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery-1.12.1.js"></script>
+    <style>
+        #div1{
+            height: 300px;
+            width: 200px;
+            border: 2px solid hotpink;
+        }
+    </style>
+    <script>
+        var website = [
+            {"name":"爱奇艺","href":"http://www.iqiyi.com"},
+            {"name":"快播","href":"http://www.iqiyi.com"},
+            {"name":"暴风","href":"http://www.iqiyi.com"},
+            {"name":"腾讯","href":"http://www.iqiyi.com"},
+            {"name":"芒果","href":"http://www.iqiyi.com"},
+            {"name":"哈哈","href":"http://www.iqiyi.com"},
+            {"name":"尼玛","href":"http://www.iqiyi.com"}
+        ];
+        $(function () {
+            $("#btn1").click(function () {
+                var table = $("<table border='1px' style='cursor: pointer'></table>");
+                var len = website.length;
+               // console.log(len);
+
+                for(var i = 0;i<len;i++){
+                    var dt = website[i];
+                    var tr = $("<tr></tr>");
+                    table.append(tr);
+
+                    var td1 = $("<td>"+dt.name+"</td>");
+                    tr.append(td1);
+
+                    var td2 = $("<td><a href='"+dt.href+"'>"+dt.name+"</a></td>");
+                    tr.append(td2);
+
+                    tr.mouseenter(function () {
+                        $(this).css("background","yellow")
+                    }).mouseleave(function () {
+                        $(this).css("background","")
+                    });
+
+                }
+                $("#div1").empty();
+                $("#div1").append(table);
+
+
+
+
+            })
+
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="创建表格" id = "btn1">
+<div id = "div1"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery-1.12.1.js"></script>
+    <style>
+        #div1{
+            height: 300px;
+            width: 200px;
+            border: 2px solid hotpink;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("<input type='button' value='按钮'>").appendTo($("#div1")).mouseenter(function () {
+                $(this).css("background","yellow");
+            })
+            $("#btn1").click(function () {
+                //用添加元素的方法
+
+            //    用innerhtml的方法
+               // $("#div1").html("<input type='button' value='按钮'>");
+
+                //$("#div1").prepend($("<span> this is a span</span>"));
+
+               // $("<span> this is another span</span>").prependTo($("#div1"));
+                //移除所有子元素
+               // $("#div1").html("");
+               //清空父元素中的子元素
+               // $("#div1").empty();
+               //自杀
+                $("#div1").remove();
+
+
+
+
+
+            })
+
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="清除元素" id = "btn1">
+<div id = "div1"></div>
+</body>
+</html>

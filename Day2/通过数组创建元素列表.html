@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 500px;
+            border:2px solid yellowgreen;
+
+        }
+    </style>
+    <script src = "../jquery-1.12.1.js"></script>
+    <script>
+        var names = ["黄","张国立","詹国光","林志颖","林志玲","林俊杰","周杰伦","明道"];
+        $(function () {
+            $("#btn1").click(function () {
+                var ObjUl = $("<ul></ul>").appendTo($("#div1"));
+
+                var len = names.length;
+                for (var i = 0; i < len; i++) {
+                    $("<li style='list-style: none'>"+names[i]+"</li>").appendTo(ObjUl).mouseenter(function () {
+                        $(this).css("background", "yellow");
+                    }).mouseleave(function () {
+                        $(this).css("background", "");
+                    })
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="创建" id = "btn1">
+<div id = "div1"></div>
+</body>
+</html>
