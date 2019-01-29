@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv{
+            height: 300px;
+            width: 400px;
+            border: solid 1px hotpink;
+        }
+        p{
+            height: 200px;
+            width: 300px;
+            border: solid 2px black;
+        }
+    </style>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            /*
+            * 为元素绑定事件的三种方式：
+            *
+            * 对象.事件的名字（事件处理函数），$("#btn").click(function(){})
+            * 对象.bind("事件名字"，事件处理函数);  $("#btn"),bind("click",function(){}
+            * 父级对象.delegate("子级元素","事件名字"，事件处理函数)--$("#dv").delegate("p","click",function(){});
+            *
+            * */
+            //第一种写法
+            // $("#btn").click(function () {
+            //     alert("我被点击了")
+            // }).mouseenter(function () {
+            //     $("#btn").css("background","red");
+            // }).mouseleave(function () {
+            //     $("#btn").css("background","green");
+            // });
+
+            //第二种写法,链式编程
+            // $("#btn").bind("click",function () {
+            //     alert("halou")
+            // }).bind("mouseenter",function () {
+            //     $("#btn").css("background","red");
+            // }).bind("mouseleave",function () {
+            //     $("#btn").css("background","green");
+            // });
+            //第三中写法，键值对
+            //bind方法绑定多个相同事件的时候，只执行最后一个，，链式编程时不会，都执行
+            // $("#btn").bind({"click":function () {
+            //         alert("halou")
+            //     },"mouseenter":function () {
+            //     $("#btn").css("background","red");
+            // },"mouseleave":function () {
+            //     $("#btn").css("background","green");
+            // }})
+
+            //delegate父级元素调用方法，为子级元素添加事件
+
+            $("#btn").click(function () {
+                $("#dv").delegate("p","click",function () {
+                    alert("p被点击了");
+                    $(this).css("backgroundColor","red");
+                })
+            })
+        })
+
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id = "btn">
+<div id = "dv">
+    <p>这是一个p</p>
+</div>
+</body>
+</html>

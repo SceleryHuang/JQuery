@@ -47,17 +47,26 @@
                 }
                 $("#div1").empty();
                 $("#div1").append(table);
+            });
 
+            $("#btn2").click(function () {
+                $("#div1").empty();
+            });
 
+            $("#btn3").click(function () {
+                var addtr = $("<tr><td>腾讯</td><td><a href='http://www.qq.com'>腾讯</a></td></tr>");
+                $("#div1").children("table").append(addtr);
+            });
 
-
-            })
 
         })
     </script>
 </head>
 <body>
 <input type="button" value="创建表格" id = "btn1">
+<input type="button" value="清空表格" id = "btn2">
+<input type="button" value="添加表格" id = "btn3">
+
 <div id = "div1"></div>
 </body>
 </html>
