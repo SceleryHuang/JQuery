@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.1.js"></script>
+    <style>
+        ul>li{
+            list-style: none;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".comment>li").mouseenter(function () {//进入
+                $(this).text("★").prevAll("li").text("★").end().nextAll("li").text("☆");
+            }).click(function () {//点击
+                $(this).attr("index","1").siblings("li").removeAttr("index");
+            }).mouseleave(function () {
+                $(".comment>li").text("☆");
+                $(".comment>li[index=1]").text("★").prevAll("li").text("★");
+            });
+
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+<ul class = "comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            $("#txt").focus(function () {
+                $(this).next("span").text("文本框获取焦点了")
+            });
+            $("#btn").click(function () {
+                //触发第一种方式
+                // $("#txt").focus();
+                //触发第二种方式
+                //$("#txt").trigger("focus");
+                //这种方式可以触发该事件，但是不能触发浏览器的默认行为
+                $("#txt").triggerHandler("focus");
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input id = "btn" type="button" value="点击获取光标">
+<input id = "txt" type="text">
+<span></span>
+
+</body>
+</html>

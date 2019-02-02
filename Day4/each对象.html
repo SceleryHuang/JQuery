@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #uu1 li{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            list-style: none;
+            display: inline-block;
+
+        }
+        #uu2 li{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            list-style: none;
+            display: inline-block;
+
+        }
+        #uu3 li{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            list-style: none;
+            display: inline-block;
+
+        }
+    </style>
+    <script src="../jquery-1.12.1.js"></script>
+    <script>
+        $(function () {
+            function color(ele){
+                ele.each(function (index,ele) {
+                    console.log(arguments[0],arguments[1]);
+                    var opacity = (index+1)/10;
+                    $(ele).css("opacity", opacity);
+
+                })
+            }
+            color($("#uu1>li"));
+            color($("#uu2>li"));
+            color($("#uu3>li"));
+
+        })
+
+    </script>
+</head>
+<body>
+<ul id = "uu1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<br>
+<ul id = "uu2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<br>
+<ul id = "uu3">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
